@@ -3,31 +3,22 @@ console.log('I am running');
 // babel src/app.js --out-file=public/scripts/app.js --resets=env,react --watch
 // JSX - JavaScript XML
 
-var template = (
-    <div>
-        <h1>Indecision App</h1>
-        <p>Some more info</p>
-        <ol>
-            <li>Item 1</li>
-            <li>Item 2</li>
-        </ol>
-    </div>
-);
-
 var user = {
     name: 'Sai Krishna',
+    age: 27,
     job: 'Software Developer',
     location: 'Charlotte, NC'
 };
 
 var app = {
     title: 'Indecision-App',
-    subTitle: 'Just some app to make decisions'
+    subTitle: 'Just some app to make decisions',
+    options: ['One', 'Two']
 };
 
 function getLocation(location){
     if(location){
-        return location;
+        return <p>Location: {location}</p>;
     } else {
         return 'Unknown'
     }
@@ -36,10 +27,12 @@ function getLocation(location){
 var template2 = (
     <div>
         <h1>{app.title}</h1>
-        <h2>{app.subTitle}</h2>
-        <p>Name: {user.name}</p>
+        {app.subTitle && <h2>{app.subTitle}</h2>}
+        <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
+        <p>Name: {user.name ? user.name : 'Anonymous'}</p>
         <p>Job: {user.job}</p>
-        <p>Location: {getLocation(user.location)}</p>
+        {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
+        {getLocation(user.location)}
         <ul>
             <li>HTML 5</li>
             <li>CSS</li>
