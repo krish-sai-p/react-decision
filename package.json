@@ -1,0 +1,12 @@
+{
+  "name": "indecision-app",
+  "version": "1.0.0",
+  "description": "Learning react by developing a small app. This app lets you decide on what to do for tough questions like where to eat.",
+  "main": "index.js",
+  "author": "Krispsai",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
+}
